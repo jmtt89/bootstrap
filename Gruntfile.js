@@ -175,6 +175,17 @@ module.exports = function (grunt) {
         },
         src: 'less/theme.less',
         dest: 'dist/css/<%= pkg.name %>-theme.css'
+      },
+      compileLegacy: {
+        options: {
+          strictMath: true,
+          sourceMap: true,
+          outputSourceFiles: true,
+          sourceMapURL: '<%= pkg.name %>-legacy.css.map',
+          sourceMapFilename: 'dist/css/<%= pkg.name %>-legacy.css.map'
+        },
+        src: 'less/legacy.less',
+        dest: 'dist/css/<%= pkg.name %>-legacy.css'
       }
     },
 
@@ -194,6 +205,12 @@ module.exports = function (grunt) {
         },
         src: 'dist/css/<%= pkg.name %>-theme.css'
       },
+      legacy: {
+        options:{
+          map: true
+        },
+        src: 'dist/css/<%= pkg.name %>-legacy.css'
+      },
       docs: {
         src: ['docs/assets/css/anchor.css', 'docs/assets/css/src/docs.css']
       },
@@ -211,7 +228,8 @@ module.exports = function (grunt) {
       },
       dist: [
         'dist/css/bootstrap.css',
-        'dist/css/bootstrap-theme.css'
+        'dist/css/bootstrap-theme.css',
+        'dist/css/bootstrap-legacy.css'
       ],
       examples: [
         'docs/examples/**/*.css'
@@ -240,6 +258,10 @@ module.exports = function (grunt) {
       minifyTheme: {
         src: 'dist/css/<%= pkg.name %>-theme.css',
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+      },
+      minifyLegacy: {
+        src: 'dist/css/<%= pkg.name %>-legacy.css',
+        dest: 'dist/css/<%= pkg.name %>-legacy.min.css'
       },
       docs: {
         src: [
@@ -486,8 +508,8 @@ module.exports = function (grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify:core', 'commonjs']);
 
   // CSS distribution task.
-  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme']);
-  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme']);
+  grunt.registerTask('less-compile', ['less:compileCore', 'less:compileTheme', 'less:compileLegacy']);
+  grunt.registerTask('dist-css', ['less-compile', 'autoprefixer:core', 'autoprefixer:theme', 'autoprefixer:legacy', 'usebanner', 'csscomb:dist', 'cssmin:minifyCore', 'cssmin:minifyTheme', 'cssmin:minifyLegacy']);
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);

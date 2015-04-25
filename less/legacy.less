@@ -1,0 +1,138 @@
+
+//
+// Load Theme
+// --------------------------------------------------
+
+@import "variables.less";
+@import "ogangi/variables.less";
+@import "buttons.less";
+@import "mixins.less";
+
+
+//
+// Extract from theme
+// --------------------------------------------------
+
+// Apply the mixin to the buttons
+.btn-external{ .button-variant(@btn-external-color; @btn-external-bg; @btn-external-border); }
+.btn-internal{ .button-variant(@btn-internal-color; @btn-internal-bg; @btn-internal-border); }
+
+
+// Common styles
+.btn{
+  font-family: "Muli";
+  &.btn-external{
+    height: 45px;
+    font-size: large;
+    font-weight: normal;
+    border-radius: 2px;
+    box-shadow: none;
+  } 
+  &.btn-internal{
+    height: 36px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
+
+//
+// Legacy Buttons
+// --------------------------------------------------
+
+.ext-largebutton{
+	.btn();
+	.btn-external();
+	.btn-block();
+}
+
+.ext-smallbutton{
+	.btn();
+	.btn-external();
+}
+
+.smallbutton{
+	.btn();
+	.btn-internal();
+	.btn-sm();
+}
+
+.tinybutton{
+	.btn();
+	.btn-internal();
+	.btn-xs();	
+}
+
+//
+// texbox
+// ----------------------------------------------------
+
+.textbox,
+.select{
+	height: 30px;
+
+  font-family: "Muli";
+  background-color: white;
+  border: 1px solid @ogangi-gray;
+  padding: 0px;
+  padding-left: 5px;
+  font-size: small;
+
+  &.smallsize{
+  	width: 70px;
+  }
+
+  &.mediumsize {
+  	width: 140px;
+	}
+
+	&.xlargesize {
+  	width: 280px;
+	}
+
+	&.datetime {
+  	width: 150px;
+	}
+
+	&.date {
+  	width: 85px;
+	}	
+
+	&.time {
+  	width: 75px;
+	}
+}
+
+.multiselect{
+	.select();
+	height: 70px;
+  width: 140px;
+}
+
+.big-multiselect{
+	.select();
+  height: 105px;
+  width: 210px;
+}
+
+
+.textarea{
+	.textbox();
+  width: 280px;
+  height: 70px;
+}
+
+.big-textarea {
+	.textbox();
+  width: 420px;
+  height: 210px;
+}
+
+.ext-textbox,
+.ext-select{
+	.textbox();
+  border-radius: 2px;
+	font-size: large;
+  height: 44px;
+  width: 392px;
+}
