@@ -4,102 +4,101 @@
 // --------------------------------------------------
 
 @import "variables.less";
+@import "ogangi/variables.less";
 @import "mixins.less";
+
+
+//
+// Font Family
+// --------------------------------------------------
+
+//
+// Format
+// --------------------------------------------------
+
+.container,.container-fluid{
+  color: @cnt-sct-txt;
+  &.external{
+
+  }
+  &.internal{
+
+  }
+}
 
 
 //
 // Buttons
 // --------------------------------------------------
 
-// Common styles
-.btn-default,
-.btn-primary,
-.btn-success,
-.btn-info,
-.btn-warning,
-.btn-danger {
-  text-shadow: 0 -1px 0 rgba(0,0,0,.2);
-  @shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
-  .box-shadow(@shadow);
-
-  // Reset the shadow
-  &:active,
-  &.active {
-    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-  }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    .box-shadow(none);
-  }
-
-  .badge {
-    text-shadow: none;
-  }
-}
-
-// Mixin for generating new styles
-.btn-styles(@btn-color: #555) {
-  #gradient > .vertical(@start-color: @btn-color; @end-color: darken(@btn-color, 12%));
-  .reset-filter(); // Disable gradients for IE9 because filter bleeds through rounded corners; see https://github.com/twbs/bootstrap/issues/10620
-  background-repeat: repeat-x;
-  border-color: darken(@btn-color, 14%);
-
-  &:hover,
-  &:focus  {
-    background-color: darken(@btn-color, 12%);
-    background-position: 0 -15px;
-  }
-
-  &:active,
-  &.active {
-    background-color: darken(@btn-color, 12%);
-    border-color: darken(@btn-color, 14%);
-  }
-
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    &,
-    &:hover,
-    &:focus,
-    &.focus,
-    &:active,
-    &.active {
-      background-color: darken(@btn-color, 12%);
-      background-image: none;
-    }
-  }
-}
-
-// Common styles
-.btn {
-  // Remove the gradient for the pressed/active state
-  &:active,
-  &.active {
-    background-image: none;
-  }
-}
-
 // Apply the mixin to the buttons
-.btn-default { .btn-styles(@btn-default-bg); text-shadow: 0 1px 0 #fff; border-color: #ccc; }
-.btn-primary { .btn-styles(@btn-primary-bg); }
-.btn-success { .btn-styles(@btn-success-bg); }
-.btn-info    { .btn-styles(@btn-info-bg); }
-.btn-warning { .btn-styles(@btn-warning-bg); }
-.btn-danger  { .btn-styles(@btn-danger-bg); }
+.btn-external{ .button-variant(@btn-external-color; @btn-external-bg; @btn-external-border); }
+.btn-internal{ .button-variant(@btn-internal-color; @btn-internal-bg; @btn-internal-border); }
 
+
+// Common styles
+.btn{
+  font-family: "Muli";
+  &.btn-external{
+    height: 45px;
+    font-size: large;
+    font-weight: normal;
+    border-radius: 2px;
+    box-shadow: none;
+  } 
+  &.btn-internal{
+    height: 36px;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
 
 //
-// Images
+// Inputs
 // --------------------------------------------------
 
-.thumbnail,
-.img-thumbnail {
-  .box-shadow(0 1px 2px rgba(0,0,0,.075));
+input::-webkit-input-placeholder,   /* WebKit browsers */
+input:-moz-placeholder,             /* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder,            /* Mozilla Firefox 19+ */
+input:-ms-input-placeholder{        /* Internet Explorer 10+ */
+  color: #767676;
 }
 
+input::-webkit-input-placeholder { 
+  padding-left: 7px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]{
+  font-family: "Muli";
+  background-color: white;
+  border: 1px solid @ogangi-gray;
+  padding: 0px;
+  padding-left: 5px;
+  
+  .external &{
+    font-size: large;
+  }
+
+  .internal &{
+    font-size: small;
+  }
+}
 
 //
 // Dropdowns
