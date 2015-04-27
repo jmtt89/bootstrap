@@ -136,3 +136,50 @@
   height: 44px;
   width: 392px;
 }
+
+//
+// Inputs
+// ----------------------------------------------------
+
+
+input::-webkit-input-placeholder,   /* WebKit browsers */
+input:-moz-placeholder,             /* Mozilla Firefox 4 to 18 */
+input::-moz-placeholder,            /* Mozilla Firefox 19+ */
+input:-ms-input-placeholder{        /* Internet Explorer 10+ */
+  color: #767676;
+}
+
+input::-webkit-input-placeholder { 
+  padding-left: 7px;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]{
+  font-family: "Muli";
+  background-color: white;
+  border: 1px solid @ogangi-gray;
+  padding: 0px;
+  padding-left: 5px;
+  
+  .external &{
+    font-size: large;
+  }
+
+  .internal &{
+    font-size: small;
+  }
+}

@@ -1,0 +1,109 @@
+//
+// Forms
+// --------------------------------------------------
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.form-control` to any
+// of the following form controls:
+//
+// select
+// textarea
+// input[type="text"]
+// input[type="password"]
+// input[type="datetime"]
+// input[type="datetime-local"]
+// input[type="date"]
+// input[type="month"]
+// input[type="time"]
+// input[type="week"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+// input[type="color"]
+
+.form-control {
+  font-family: "Muli";
+  background-color: white;
+  border: 1px solid @ogangi-gray;
+  padding: 0px;
+  padding-left: 5px;
+  
+  // Customize the `:focus` state to imitate native WebKit styles.
+  .form-control-focus(@ogangi-gray-dark);
+
+  // Placeholder
+  .placeholder(@ogangi-gray-dark);
+
+}
+
+.external &{
+  .form-group-external();
+  .control-label{
+    font-size: x-large;
+    padding-top: 0px;
+    padding-top: 5px;
+  }
+}
+
+.internal &{
+  .form-group-internal();
+  .control-label{
+    font-size: normal;
+    padding-top: 0px;
+    padding-top: 5px;
+  }
+}
+
+.form-group-external {
+  .form-control {
+    height: 44px;
+    padding: 0px 5px;
+    font-size: large;
+    line-height: normal;
+    border-radius: 2px;
+  }
+  select.form-control {
+    height: 44px;
+    line-height: 44px;
+  }
+  textarea.form-control,
+  select[multiple].form-control {
+    height: auto;
+  }
+  .form-control-static {
+    height: 44px;
+    min-height: 44px;
+    padding: 1px 0px;
+    font-size: large;
+    line-height: normal;
+  }
+}
+
+.form-group-internal {
+  .form-control {
+    height: 30px;
+    padding: 0px 5px;
+    font-size: small;
+    line-height: normal;
+    border-radius: 0px;
+  }
+  select.form-control {
+    height: 30px;
+    line-height: normal;
+  }
+  textarea.form-control,
+  select[multiple].form-control {
+    height: auto;
+  }
+  .form-control-static {
+    height: 30px;
+    min-height: 30px;
+    padding: 6px 0px;
+    font-size: small;
+    line-height: normal;
+  }
+}
+

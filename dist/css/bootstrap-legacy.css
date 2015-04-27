@@ -1173,4 +1173,72 @@ fieldset[disabled] a.tinybutton {
 .ext-select.time {
   width: 75px;
 }
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input::-moz-placeholder,
+input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #767676;
+}
+input::-webkit-input-placeholder {
+  padding-left: 7px;
+}
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+  padding: 0;
+  padding-left: 5px;
+  font-family: "Muli";
+  background-color: white;
+  border: 1px solid #d3d3d3;
+}
+.external select,
+.external textarea,
+.external input[type="text"],
+.external input[type="password"],
+.external input[type="datetime"],
+.external input[type="datetime-local"],
+.external input[type="date"],
+.external input[type="month"],
+.external input[type="time"],
+.external input[type="week"],
+.external input[type="number"],
+.external input[type="email"],
+.external input[type="url"],
+.external input[type="search"],
+.external input[type="tel"],
+.external input[type="color"] {
+  font-size: large;
+}
+.internal select,
+.internal textarea,
+.internal input[type="text"],
+.internal input[type="password"],
+.internal input[type="datetime"],
+.internal input[type="datetime-local"],
+.internal input[type="date"],
+.internal input[type="month"],
+.internal input[type="time"],
+.internal input[type="week"],
+.internal input[type="number"],
+.internal input[type="email"],
+.internal input[type="url"],
+.internal input[type="search"],
+.internal input[type="tel"],
+.internal input[type="color"] {
+  font-size: small;
+}
 /*# sourceMappingURL=bootstrap-legacy.css.map */
