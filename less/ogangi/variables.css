@@ -1,0 +1,90 @@
+//
+// Variables
+// --------------------------------------------------
+
+//== Colors
+//
+//## Gray and brand colors
+
+@ogangi-gray-base:      #222533;
+@ogangi-gray-darker:    #555;
+@ogangi-gray-dark:      #767676;
+@ogangi-gray:           #D3D3D3;
+@ogangi-gray-light:     #F1F1F1;
+@ogangi-gray-lighter:   #FAFAFA;
+
+@darkgreen: 			#47C479;
+@lightblue: 			#2EC1CC;
+@orange: 				#FFB61C;
+@red:					#FF4747;
+@darkblue: 				#8585FF;
+@lilac: 				#B88AE6; 
+@lightgreen: 			#B7E85F; 
+@yellow: 				#F5E13F; 
+
+
+//== Scaffolding
+//
+//## Settings for some of the most global styles.
+@header-bg: 		@ogangi-gray-base;  //Header Background
+@footer-bg:			@ogangi-gray-darker;//Footer Background
+  
+@nav-btn-txt:  		@ogangi-gray-dark;	//Navigation Button Text 
+@opt-bar-btn-txt:   @ogangi-gray-dark;	//Option Bar Button Text 
+@cnt-pnl-tlt-txt:   @ogangi-gray-dark;	//Content Panel Title Text
+@cnt-sct-txt:   	@ogangi-gray-dark;	//Content Section Texts 
+	
+@hdr-links:			@ogangi-gray; 		//Header Links
+@hdr-links-div:		@ogangi-gray; 		//Header Link Divisors
+@logo-div:			@ogangi-gray; 		//Logo-Content Divisor Line
+@opt-bar-div:		@ogangi-gray; 		//Option Bar Division Line
+
+@ctn-sct-bgn:		@ogangi-gray-light; //Content Section Background 
+@opt-bar-bg:		@ogangi-gray-light; //Options Bar Background 
+
+
+@ext-bg: 			@ogangi-gray-lighter;//External Form Area Background
+
+@hdr-tlt-txt: 		white; //Header Title Text
+@hdr-txt:			white; //Header Text (User Welcome)
+@nav-btn-icn:		white; //Navigation Button Icon
+@nav-btn-bg:		white; //Navigation Button Background
+@opt-bar-btn-icn:	white; //Options Bar Button Icon
+@opt-bar-btn-bg: 	white; //Options Bar Button Background 
+
+@wzd-prv-stps: 		#9DC8E2; //Wizard Preview Steps
+
+@int-sec-cnt-btn:  	#2184BE; //Internal Section Content Area Buttons
+@int-sec-cnt-wzr:  	#2184BE; //Internal Section Content Area Wizard Buttons
+@int-sec-cnt-inf:  	#2184BE; //Internal Section Content Area Info Icon
+
+
+
+///Buttons
+@btn-internal-color:	white;
+@btn-internal-bg:		@int-sec-cnt-btn;
+@btn-internal-border:	@int-sec-cnt-btn;
+
+@btn-external-color:	white;
+@btn-external-bg:		@ogangi-gray-darker;
+@btn-external-border: 	@ogangi-gray-darker;
+
+
+// Layouts
+
+//External
+@ext-hdr-hg: 	56px;
+@ext-logo-hg: 	calc(2*@ext-hdr-hg);
+@ext-ftr-hg:	@ext-hdr-hg;
+
+//Home Page
+@int-hp-hdr-hg: 	56px;
+@int-hp-logo-hg: 	@int-hp-hdr-hg;
+@int-hp-nav-sec: 	calc(2*@int-hp-hdr-hg);
+@int-hp-ftr-hg:		@int-hp-hdr-hg;
+
+//Any other page
+@int-ip-hdr-hg: 	56px;
+@int-ip-logo-hg: 	@int-hp-hdr-hg;
+@int-ip-nav-sec: 	calc(1.5*@int-hp-hdr-hg);
+@int-ip-ftr-hg:		@int-hp-hdr-hg;
